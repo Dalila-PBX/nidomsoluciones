@@ -353,12 +353,13 @@
 .modelo__swiper .swiper-slide-active .slide-content {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0); /* Sube a su posición original suavemente */
+  transform: translateY(); /* Sube a su posición original suavemente */
   transition-delay: 0.2s; 
 }
 
 .modelo__swiper .swiper-pagination-bullet-active {
   background: #AA8D51; /* Color dorado de la marca */
+  
 }
 
 /* Flechas de navegación doradas */
@@ -504,9 +505,8 @@
     height: auto; /* Permite a Swiper estirar todas las tarjetas a la misma altura */
 }
 
-.reviews__swiper {
-    padding-bottom: 4rem; /* Espacio para los puntos de paginación abajo */
-}
+
+
 
 .reviews__swiper .swiper-pagination-bullet-active {
     background: #AA8D51; /* Color dorado de tu marca */
