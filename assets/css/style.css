@@ -1,0 +1,990 @@
+/*=============BASE=============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+/*=============HEADER=============*/
+
+.header__contact{
+    background-image: url("../images/cintillo2.PNG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Forzar color blanco en los enlaces de la barra superior de contacto */
+.header__contact a {
+    color: #ffffff !important;
+}
+
+.start-header {
+	opacity: 1;
+	transform: translateY(0);
+	padding: 10px 0;
+	-webkit-transition : all 0.3s ease-out;
+	transition : all 0.3s ease-out;
+    background-color: transparent; /* Transparente al inicio */
+}
+
+.navigation-wrap{
+	z-index: 1000;
+	-webkit-transition : all 0.3s ease-out;
+	transition : all 0.3s ease-out;
+}
+
+.navbar__logo{
+  height: clamp(2.5em, 5vw, 3.5em);
+  width: auto;
+  transition: all 0.3s ease-out;
+}
+
+.navbar-nav{
+    column-gap: 4em;
+}
+
+.nav-link{
+    color: #000 !important;
+    font-family: "Montserrat", sans-serif ;
+    font-style: normal;
+    transition: all 200ms linear;
+    display: inline-block
+}
+
+/* Efecto Hover del CodePen (Subrayado) */
+.navbar-nav .nav-item:hover .nav-link{
+	color: #AA8D51  !important; /* Puedes cambiar este color por el azul de tu marca */
+}
+
+.navbar-nav .nav-item:after{
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    content: '';
+    background-color: #AA8D51;
+    opacity: 0;
+    transition: all 200ms linear;   
+}
+.navbar-nav .nav-item:hover:after{
+    bottom: 0;
+    opacity: 1;
+}
+.navbar-nav .nav-item.active:hover:after{
+    opacity: 0;
+}
+.nav-item{
+    position: relative;
+    transition: all 200ms linear;
+}
+
+/* Animación del Botón Hamburguesa */
+.navbar-toggler:active,
+.navbar-toggler:focus {
+	outline: none;
+    box-shadow: none;
+}
+.navbar-toggler-icon {
+	width: 24px;
+	height: 17px;
+	background-image: none;
+	position: relative;
+	border-bottom: 1px solid #111;
+    transition: all 300ms linear;
+}
+.navbar-toggler-icon:after, 
+.navbar-toggler-icon:before{
+	width: 24px;
+	position: absolute;
+	height: 1px;
+	background-color: #111;
+	top: 0;
+	left: 0;
+	content: '';
+	z-index: 2;
+    transition: all 300ms linear;
+}
+.navbar-toggler-icon:after{
+	top: 8px;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+	transform: rotate(45deg);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+	transform: translateY(8px) rotate(-45deg);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+	border-color: transparent;
+}
+
+
+
+/*=============== INICIO ===============*/
+.header__banner{
+  background-image: url("../images/responsive/PORTADA_NIDOM.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 41vw;
+  
+}
+
+.header__button{
+  padding: .4rem 2.5rem;
+  border-radius: 20px;
+  background: linear-gradient(to right, #6F4A00, #C9A24A);
+  color: #fff;
+  border: none;
+}
+
+/*=============== NOSOTROS ===============*/
+
+.nosotros__banner{
+  background-image: url("../images/PRUEBADERESPONSIVE_MILOCHOMIL.png");
+  background-size: cover;
+  background-position-y:center;
+  background-repeat: no-repeat;
+  
+}
+
+.nosotros__title{
+    background: linear-gradient(to right, #6F4A00, #C9A24A ); /* Cambia #82addb por tu segundo color */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    font-family: "Playfair Display", serif;
+}
+
+.nosotros__text{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nosotros__cards-container {
+  padding-top: 5em;
+  padding-bottom:3em;
+}
+
+
+.nosotros__card-text {
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: clamp(0.7em, 1.2vw + 0.2em, 1em); 
+  color: #343a40;
+  font-weight: 500;
+}
+
+
+.nosotros__card-title__1, .nosotros__card-title__2 {
+  color: #6F4A00; 
+  font-family: "Playfair Display", serif;
+  
+}
+
+/* =======================================================
+   CLASE BASE DE LAS CARDS (Define tamaño, fondo y flexbox)
+   ======================================================= */
+.nosotros__card {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 370px; 
+  max-width: 450px; 
+  margin: 0 auto; 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; 
+  text-align: center;
+}
+
+/* ======== CARD MISIÓN (Texto arriba, Título abajo) ======== */
+.nosotros__card--mision {
+  background-image: url("../images/mision-recuadro.png");
+  padding: 1.5rem 5rem 5rem 5rem;
+
+}
+
+/* ======== CARD VISIÓN (Título arriba, Texto abajo) ======== */
+.nosotros__card--vision {
+  background-image: url("../images/vision-recuadro.png");
+  
+  padding: 4rem 5rem 2.5rem 5rem;
+  
+  
+}
+
+/*=============== QUÉ HACEMOS ===============*/
+.hacemos__banner{
+  background-image: url("../images/1920X1080ADAPTADO.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+ 
+}
+
+.hacemos__content{
+  padding-bottom: 20em;
+}
+
+.hacemos__tittle{
+    background: linear-gradient(to right, #6F4A00, #C9A24A ); /* Cambia #82addb por tu segundo color */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    font-family: "Playfair Display", serif;
+}
+
+.hacemos__tittle__2{
+  color: #aa750b;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+.hacemos__list li {
+  padding-left: 2em; 
+  position: relative;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.hacemos__list li::before {
+  content: '';
+  background-image: url("../images/CHECK.png");   background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0.1em; 
+  width: 1.5em;
+  height: 1.5em;
+}
+
+
+/*=============== SERVICIOS Y ADMINISTRACION ===============*/
+.serv__banner{
+  background-image: url("../images/PORTADA_SERVICIO.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding-bottom: 12em;
+  padding-top: 12em;
+}
+
+.serv__tittle{
+    background: linear-gradient(to right, #6F4A00, #C9A24A ); /* Cambia #82addb por tu segundo color */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    font-family: "Playfair Display", serif;
+}
+
+.serv__text{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.adm__banner{
+  background-image: url("../images/ADMINISTRACION_APARTADO.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 7em;
+  padding-top: 7em;
+  
+}
+
+
+.adm__col-texto {
+  padding-left: 10rem; 
+}
+
+
+
+
+/*=============== MODELO DE GESTIÓN ===============*/
+.modelo__banner{
+  background-image: url("../images/responsive/1920x1080 fondo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding-bottom: 30em;
+  padding-top: 12em;
+  position: relative;
+  z-index: 1; 
+}
+
+/* =========================================
+   SWIPER CAROUSEL (MODELO DE GESTIÓN)
+   ========================================= */
+.modelo__swiper {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 3.5rem; /* Espacio para que quepan los puntos de paginación */
+}
+
+.modelo__swiper .swiper-slide {
+  width: 18.75rem; /* Ancho fijo necesario para el efecto Coverflow */
+  max-width: 100%; /* Evita desbordamientos en pantallas muy pequeñas */
+  height: 35rem;   
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.modelo__swiper .slide-content {
+  opacity: 0;
+  height: 100%; /* Permite que el contenido abarque toda la tarjeta */
+  width: 100%;
+  padding-top: 2rem; 
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empuja el h2 arriba y el p hasta abajo */
+  transform: translateY(15px); 
+  transition: all 0.4s ease-in-out;
+  visibility: hidden;
+}
+
+.modelo__swiper .swiper-slide-active .slide-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Sube a su posición original suavemente */
+  transition-delay: 0.2s; 
+}
+
+.modelo__swiper .swiper-pagination-bullet-active {
+  background: #AA8D51; /* Color dorado de la marca */
+}
+
+/* Flechas de navegación doradas */
+.modelo__swiper .swiper-button-next,
+.modelo__swiper .swiper-button-prev {
+  color: #AA8D51; 
+}
+
+/* Imágenes de las tarjetas (Reemplaza las URLs por tus propias imágenes) */
+.swiper-slide--one { background: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url("../images/CARRUSEL_2.png") no-repeat center center / cover; }
+.swiper-slide--two { background: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url("../images/CARRUSEL_3.png") no-repeat center center / cover; }
+.swiper-slide--three { background: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url("../images/CARRUSEL_1.png") no-repeat center center / cover; }
+
+
+/*=============== VALORES ===============*/
+.valores__section {
+  position: relative;
+  z-index: 2; 
+  margin-top: -19rem; 
+  background-color: transparent; 
+}
+
+.valores__banner{
+  background-image: url("../images/responsive/valoresprueba.png") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding-top: 45em;
+}
+
+.valores__col {
+  position: relative; /* Necesario para que el apilamiento (z-index) funcione bien */
+  display: flex;
+  align-items: flex-end; /* Obliga a que la imagen se pegue a la base de la columna */
+}
+
+.valores__col img {
+  width: 100%;
+  height: auto;
+  display: block; 
+}
+
+/*=============== SERVICIOS ===============*/
+.servicios__banner{
+  background-image: url("../images/SERVICIOS_FONDO.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.servicios__tittle{
+    font-family: "Playfair Display", serif;
+}
+
+/* =========================================
+   SWIPER CAROUSEL (SERVICIOS)
+   ========================================= */
+.servicios__swiper {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 4rem; /* Espacio inferior para la paginación */
+}
+
+.servicios__swiper .swiper-slide {
+  height: auto; /* Asegura que todas las tarjetas midan lo mismo de alto */
+}
+
+/* Altura de las tarjetas de servicios */
+.servicios__swiper .card {
+  min-height: 25rem; 
+}
+
+/* Estilos para que combinen con la marca */
+.servicios__swiper .swiper-button-next,
+.servicios__swiper .swiper-button-prev {
+  color: #AA8D51; 
+}
+.servicios__swiper .swiper-pagination-bullet-active {
+  background: #AA8D51;
+}
+
+/* Animación de la flecha en las tarjetas de servicios */
+.card-toggle-btn i {
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+}
+.card-toggle-btn:not(.collapsed) i {
+  transform: rotate(180deg);
+}
+
+.card__content{
+  padding-top: 10em;
+}
+
+
+/*=============== CALIDAD TECNOLOGIA  ===============*/
+
+.calidad__banner{
+  background-image: url("../images/FONDO_CALIDAD.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.calidad__banner img{
+  width: 83%;
+}
+
+.experiencia__tittle{
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1rem, 4vw, 2.5rem);
+}
+
+
+/* ------ CARRUSEL ------- */
+.reviews-card {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Imagen del lado izquierdo, texto toma el resto */
+    width: 100%;
+    height: 100%; /* Para que todas las tarjetas estiren al mismo alto */
+    background-color: white;
+    margin: 0 auto;
+    box-shadow: 0px 12px 10px -1px rgba(0, 0, 0, 0.10); /* Sombra inferior, extendida a izquierda y derecha */
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem; /* Ajusta esto para hacer el "borde blanco" más grueso o delgado */
+    background-color: white; /* El color de fondo del bloque */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-review {
+    width: 200px; /* Aquí escoges el tamaño ancho de tu imagen */
+    height: 200px; /* Aquí escoges el tamaño alto de tu imagen */
+    border-radius: 1.5rem; /* Aquí aplicas el borde redondeado */
+    object-fit: cover;
+}
+
+.reviews__swiper .swiper-slide {
+    height: auto; /* Permite a Swiper estirar todas las tarjetas a la misma altura */
+}
+
+.reviews__swiper {
+    padding-bottom: 4rem; /* Espacio para los puntos de paginación abajo */
+}
+
+.reviews__swiper .swiper-pagination-bullet-active {
+    background: #AA8D51; /* Color dorado de tu marca */
+}
+
+/*=============== ESTRATEGIA  ===============*/
+.intermedio__banner{
+  background-image: url("../images/COMENTARIOS_FONDO.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* min-height: 300px; */ 
+}
+
+.estrategia__banner{
+  background-image: url("../images/pelado-con-fondo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.estrategia__list-container{
+  padding-top: 43em;
+  color: #fff;
+}
+
+.estrategia__list p {
+  position: relative;
+  padding-left: 2em; /* Empuja el texto para que el icono no lo tape */
+}
+
+.estrategia__list p::before {
+  content: '';
+  background-image: url("../images/CHECK.png");   background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/*=============== CONTACTO   ===============*/
+.contacto__banner{
+  background-image: url("../images/FONDO_CONTACTO.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+
+.contacto__container{
+  padding-top: 8em;
+  padding-bottom: 8em;
+}
+.contacto__formulario{
+  background-color: #f1f1f1;
+}
+
+.contacto__tittle{
+  font-family: "Montserrat", serif;
+  
+}
+
+/*=============== CONTACTO   ===============*/
+.footer__banner{
+  background-image: url("../images/FOOTER.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 5em;
+  padding-bottom: 2em;
+}
+
+/* Obligamos a que los enlaces del footer sean blancos */
+.footer__banner .nav-link {
+  color: #ffffff !important;
+}
+.footer__banner .nav-link:hover {
+  color: #AA8D51 !important;
+}
+
+.g-recaptcha {
+  transform: scale(0.85); /* Ajusta este valor según el tamaño deseado */
+  transform-origin: 0 0; /* Asegura que el origen del escalado sea desde la esquina superior izquierda */
+}
+
+/*WhatsApp Btn*/
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  left: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 60px;
+  text-align: center;
+  padding-top: 7px;
+  font-size: 30px;
+  z-index: 100;
+  
+}
+
+.float:hover {
+  background-color: #fff;
+  color: #25d366;
+}
+
+.my-float {
+  margin-top: 16px;
+}
+/* =========================================
+   MEDIA QUERIES (ORDENADAS)
+   ========================================= */
+
+@media only screen and (min-width: 320px) and (max-width: 374px){
+  .nosotros__card--mision {
+    height: 350px;
+    padding-top: 3.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem ;
+    padding-bottom: 8rem;
+    
+  }
+  .nosotros__card-title__1 {
+    padding-top: 1rem;
+  }
+
+  .nosotros__card--vision{
+    padding: 8rem 3rem 3.5rem 3rem;
+
+  }
+  
+ 
+  
+}  
+
+@media only screen and (min-width: 375px) and (max-width: 384px){
+ 
+  .nosotros__card--mision {
+    padding-top: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem ;
+    padding-bottom: 8rem;
+  }
+
+  .nosotros__card--vision{
+    padding: 8rem 3rem 3.5rem 3rem;
+  }
+ 
+  
+}
+
+@media only screen and (min-width: 385px) and (max-width: 390px){
+ 
+  .nosotros__card--mision {
+    padding-top: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem ;
+    padding-bottom: 8rem;
+  }
+   .nosotros__card--vision{
+    padding: 8rem 3rem 5.5rem 3rem;
+  }
+  
+}
+
+@media only screen and (min-width: 391px) and (max-width: 412px){
+ 
+  .nosotros__card--mision {
+    height: 310px;
+    padding-top: 3rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem ;
+    padding-bottom: 8rem;
+    
+  }
+  .nosotros__card--vision{
+    height: 310px;
+    padding-top: 6rem;
+  }
+  
+}
+
+@media only screen and (min-width: 413px) and (max-width: 428px){
+ 
+  .nosotros__card--mision {
+    height: 310px;
+    padding-top: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem ;
+    padding-bottom: 8rem;
+    
+  }
+  .nosotros__card--vision{
+    height: 310px;
+    padding-top: 6rem;
+  }
+  
+}
+
+
+
+@media only screen and (min-width: 429px) and (max-width: 430px){
+ 
+  .nosotros__card--mision {
+    height: 310px;
+    padding-top: 3rem;
+    padding-left: 4.3rem;
+    padding-right: 4.3rem ;
+    padding-bottom: 8rem;
+    
+  }
+
+  .nosotros__card--vision{
+    height: 310px;
+    padding-top: 6rem;
+  }
+  
+}
+
+@media (max-width: 400px){
+    .hacemos__content{
+    padding-bottom: 11em;
+  }
+
+  
+  
+}
+
+@media(max-width: 576px){
+  .serv__banner{
+      background-image: url("../images/responsive/responsive.png");
+    }
+
+  .servicios__swiper{
+    width: 85%;
+  }
+
+}
+@media screen and (min-width: 400px) and (max-width: 767px){
+  .hacemos__content{
+    padding-bottom: 11em;
+  }
+
+  
+  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 768px){
+ 
+  .nosotros__card--mision {
+    padding-top: 3.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 8rem;
+  }
+
+  .nosotros__card--vision{
+   padding: 5rem 3rem 4.5rem 3rem;
+  }
+  
+}
+
+
+@media(max-width: 767px){
+  .estrategia__banner{
+    background-image: none;
+    
+  }
+  .estrategia__list-container{
+  padding-top: 1em;
+  color: #000;
+  }
+
+  .contacto__container{
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.footer__banner{
+  padding-top: 2em;
+}
+
+
+}
+
+@media (max-width: 768px){
+    .header__banner{
+      height: 300px;
+    }
+
+    .hacemos__list li {
+      margin-bottom: 1.3rem;
+    }
+
+    /* Ajuste para que en celulares se mantenga el diseño centrado y no tome el espacio de PC */
+    .adm__col-texto {
+      padding-left: 1.5rem; 
+      padding-right: 1.5rem;
+    }
+
+}
+
+/* Responsivo para el carrusel de reseñas (Móviles y Tablets) */
+@media (max-width: 991px) {
+    .reviews-card {
+        grid-template-columns: 1fr; /* Apila la imagen arriba y el texto abajo */
+        max-width: 450px; /* Ancho cómodo para tablets y móviles grandes */
+    }
+    
+    .card-img-review {
+        width: 180px; 
+        height: 180px;
+    }
+    
+    .card-text-review {
+        text-align: center; /* Centramos el texto en modo apilado para mayor estética */
+    }
+}
+
+@media (max-width: 991.98px) {
+  .valores__banner{
+    padding-top: 3rem;
+    background-image: url("../images/responsive/bannercompleto.png");
+  }
+  .valores__col img {
+    height: 25rem;
+    width: 100%;  
+    max-width: 20rem; 
+    object-fit: contain; 
+    margin: 0 auto; 
+  }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991px){
+  .hacemos__content{
+    padding-bottom: 12em;
+  }
+
+  .estrategia__list-container {
+    padding-top: 22em;
+  }
+  .estrategia__container{
+    padding-bottom: 15em;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 820px){
+ 
+  .nosotros__card--mision {
+    padding-top: 4.5rem;
+    padding-left: 2.7rem;
+    padding-right: 2.7rem;
+    padding-bottom: 8rem;
+    
+  }
+  .nosotros__card--vision{
+    padding: 7rem 3rem 4.5rem 3rem;
+  }
+  
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px){
+  .adm__col-texto {
+    padding-left: 8rem; 
+  }
+}
+
+/* Efecto de superposición (SOLO en pantallas grandes, 992px o más) */
+@media (min-width: 992px) {
+  .valores__col:not(:first-child) {
+    margin-left: -0.5rem; 
+  }
+  .valores__col{
+    height: 15rem; 
+  }
+  
+}
+
+@media (max-width: 991px){
+  .nav-item:after {
+    display: none;
+  }
+  .start-header {
+    background-color: transparent !important;
+  }
+  .header__banner{
+  background-image: url("../images/responsive/1024x720.png");
+  }
+
+  .header__banner{
+      height: 350px;
+  }
+  
+  .nosotros__cards{
+  padding-top: 0em;
+  padding-bottom: 2em;
+  }
+  
+  .serv__banner,
+  .adm__banner{
+    padding-bottom: 4em;
+    padding-top: 4em;
+  }
+
+  /* .nosotros__banner{
+    background: #f3f1f1;
+  } */
+
+}
+
+@media (min-width: 992px) and (max-width: 1023px){
+  .valores__banner{
+    padding-top: 22em;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px){
+  .valores__banner{
+      padding-top: 22em;
+    }
+}
+
+
+@media (max-width: 1024px){
+  .modelo__banner{
+    padding-top: 4em;
+    padding-bottom: 17em;
+  }
+  .valores__section{
+    margin-top: -12rem; 
+  }
+  
+}
+
+@media (min-width: 1024px) and (max-width: 1279px){
+  .valores__banner{
+    padding-top: 23em;
+  }
+}
+
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1024px){
+ 
+  .nosotros__card--mision {
+    
+    padding-top: 1.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  .nosotros__card--vision{
+    padding: 4rem 5rem 2.5rem 5rem;
+  }
+ 
+}
+
+@media (min-width: 1024px) and (max-width: 1366px){
+  .hacemos__list li {
+  margin-bottom: 1rem;
+}
+}
+
+@media (min-width: 1280px) and (max-width: 1366px){
+  .valores__banner{
+    padding-top: 33em;
+  }
+}
+
+@media(min-width:1920px){
+  .estrategia__container{
+    padding-top: 8em;
+    padding-bottom: 0em;
+  }
+  .estrategia__list-container{
+  padding-top: 44em;
+}
+}
